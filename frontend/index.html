@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manufacturing Support Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🔧 Manufacturing Support Assistant</h1>
+            <p>Get instant help with pump troubleshooting and technical issues</p>
+            <button id="analyticsToggle" class="analytics-button">
+                📊 Analytics
+            </button>
+            
+            <!-- Case and Agent Info -->
+            <div class="case-info">
+                <div class="info-field">
+                    <label for="caseId">Case ID:</label>
+                    <input type="text" id="caseId" placeholder="e.g., CASE-2024-001" />
+                </div>
+                <div class="info-field">
+                    <label for="agentId">Agent ID:</label>
+                    <input type="text" id="agentId" placeholder="e.g., agent.smith" />
+                </div>
+            </div>
+        </header>
+
+        <!-- Chat Container -->
+        <div class="chat-container" id="chatContainer">
+            <div class="welcome-message">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        <p>👋 Hello! I'm your manufacturing support assistant. Ask me about:</p>
+                        <ul>
+                            <li>HydroMax pump troubleshooting</li>
+                            <li>Installation procedures</li>
+                            <li>Maintenance schedules</li>
+                            <li>Technical specifications</li>
+                        </ul>
+                        <p>Try asking: <em>"HydroMax 2000 has low flow rate"</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="input-container">
+            <div class="input-wrapper">
+                <textarea 
+                    id="queryInput" 
+                    placeholder="Describe your manufacturing issue or question..."
+                    rows="3"
+                ></textarea>
+                <button id="sendButton" class="send-button">
+                    <span class="button-text">Send</span>
+                    <span class="loading-spinner" style="display: none;">⏳</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Analytics Panel -->
+        <div id="analyticsPanel" class="analytics-panel">
+            <div class="analytics-header">
+                <h3>📊 Performance Analytics</h3>
+                <button id="closeAnalytics" class="close-button">×</button>
+            </div>
+            
+            <div class="analytics-content">
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-value" id="satisfactionRate">--%</div>
+                        <div class="metric-label">Satisfaction Rate</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" id="totalResponses">--</div>
+                        <div class="metric-label">Total Responses</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" id="helpfulResponses">--</div>
+                        <div class="metric-label">Helpful Responses</div>
+                    </div>
+                </div>
+                
+                <div class="recent-feedback-section">
+                    <h4>Recent Positive Feedback</h4>
+                    <div id="recentFeedbackList" class="feedback-list">
+                        <div class="no-feedback">No feedback available yet</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
